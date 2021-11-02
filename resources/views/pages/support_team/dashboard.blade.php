@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('page_title', 'My Dashboard')
+@section('page_title', __('app.mi_panel'))
 @section('content')
 
     @if(Qs::userIsTeamSA())
@@ -9,7 +9,7 @@
                    <div class="media">
                        <div class="media-body">
                            <h3 class="mb-0">{{ $users->where('user_type', 'student')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs font-weight-bold">Total Students</span>
+                           <span class="text-uppercase font-size-xs font-weight-bold">{{__('app.total_estudiantes')}}</span>
                        </div>
 
                        <div class="ml-3 align-self-center">
@@ -24,7 +24,7 @@
                    <div class="media">
                        <div class="media-body">
                            <h3 class="mb-0">{{ $users->where('user_type', 'teacher')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Total Teachers</span>
+                           <span class="text-uppercase font-size-xs">{{__('app.total_docentes')}}</span>
                        </div>
 
                        <div class="ml-3 align-self-center">
@@ -43,7 +43,7 @@
 
                        <div class="media-body text-right">
                            <h3 class="mb-0">{{ $users->where('user_type', 'admin')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Total Administrators</span>
+                           <span class="text-uppercase font-size-xs">{{__('app.total_admin')}}</span>
                        </div>
                    </div>
                </div>
@@ -58,7 +58,7 @@
 
                        <div class="media-body text-right">
                            <h3 class="mb-0">{{ $users->where('user_type', 'parent')->count() }}</h3>
-                           <span class="text-uppercase font-size-xs">Total Parents</span>
+                           <span class="text-uppercase font-size-xs">{{__('app.total_padres')}}</span>
                        </div>
                    </div>
                </div>

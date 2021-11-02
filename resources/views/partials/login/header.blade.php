@@ -17,21 +17,35 @@
             <li class="nav-item dropdown">
                 <a href="{{ route('home') }}" class="navbar-nav-link">
                     <i class="icon-home"></i>
-                    <span class="d-md-none ml-2">Home</span>
+                    <span class="d-md-none ml-2">{{__('login.inicio')}}</span>
                 </a>
             </li>
 
             <li class="nav-item dropdown">
                 <a href="{{ route('login') }}" class="navbar-nav-link">
                     <i class="icon-user-tie"></i>
-                    <span class="d-md-none ml-2">My Account</span>
+                    <span class="d-md-none ml-2">{{__('login.mi_cuenta')}}</span>
                 </a>
+            </li>
+            <li>
+                @if(session()->get('locale') == 'en')
+                    <a href="{{url('locale/es')}}" class="navbar-nav-link">
+                        <i class="icon">ES</i>
+                        <span class="d-md-none ml-2">Español</span>
+                    </a>
+                @endif
+                @if(session()->get('locale') == 'es')
+                    <a href="{{url('locale/en')}}" class="navbar-nav-link">
+                        <i class="icon">EN</i>
+                        <span class="d-md-none ml-2">Ingles</span>
+                    </a>
+                @endif
             </li>
 
             <li class="nav-item dropdown">
                 <a href="#" class="navbar-nav-link">
                     <i class="icon-cog3"></i>
-                    <span class="d-md-none ml-2">Options</span>
+                    <span class="d-md-none ml-2">{{__('login.opcion')}}</span>
                 </a>
             </li>
         </ul>
